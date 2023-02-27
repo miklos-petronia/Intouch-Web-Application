@@ -60,3 +60,11 @@ const updateThoughtById = async (req, res) => {
         catchError(res, error);
     }
 };
+// move the controllers to be utilized by the router.
+module.exports = {
+    findAllThoughts,
+    findOneThought,
+    createThought,
+    deleteThoughtById,
+    updateThoughtById,
+};

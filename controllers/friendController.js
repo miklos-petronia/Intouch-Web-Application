@@ -17,3 +17,8 @@ const updateFriends = async (req, res, update) => {
         catchError(res, error);
     }
 }
+//adding friends by identification
+const addFriend = async (req, res) => {
+    const update = { $addToSet: { friends: req.params.friendId } };
+    updateFriends(req, res, update);
+};

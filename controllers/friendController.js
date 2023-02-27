@@ -27,3 +27,8 @@ const removeFriend = async (req, res) => {
     const update = { $pull: { friends: req.params.friendId } };
     updateFriends(req, res, update);
 };
+//export to be utilized by the routes
+module.exports = {
+    addFriend,
+    removeFriend,
+};

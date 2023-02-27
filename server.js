@@ -12,3 +12,7 @@ app.use(express.json());
 // contain Mongoose reduction warning for `strictQuery`
 mongoose.set('strictQuery', false);
 
+// authorize a contact with MongoDB
+db.once("open", () => {
+    app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
+});

@@ -12,3 +12,14 @@ const createUser = async (req, res) => {
         catchError(res, error);
     }
 };
+// search a user by identification
+const findOneUser = async (req, res) => {
+    try {
+        const userDb = await User.findOne({ _id: req.params.userId })
+            .populate('thoughts')
+            .populate('friends');
+        res.status(200).json(userDb);
+    } catch (error) {
+        catchError(res, error);
+    }
+};

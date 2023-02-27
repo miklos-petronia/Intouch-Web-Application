@@ -47,3 +47,16 @@ const deleteThoughtById = async (req, res) => {
         catchError(res, error);
     }
 };
+//updating a thought by identification
+const updateThoughtById = async (req, res) => {
+    try {
+        const updatedThought = await Thought.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            { $set: req.body },
+            { runValidators: true, new: true }
+        );
+        res.status(200).json(updatedThought);
+    } catch (error) {
+        catchError(res, error);
+    }
+};

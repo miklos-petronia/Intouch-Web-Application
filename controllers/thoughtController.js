@@ -36,3 +36,14 @@ const findAllThoughts = async (req, res) => {
         catchError(res, error);
     }
 };
+//remove a thought by identification
+const deleteThoughtById = async (req, res) => {
+    try {
+        const deletedThought = await Thought.findByIdAndDelete({
+            _id: req.params.thoughtId,
+        });
+        res.status(200).json({ message: 'thought deleted!', deletedThought });
+    } catch (error) {
+        catchError(res, error);
+    }
+};

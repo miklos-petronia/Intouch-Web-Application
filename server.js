@@ -16,3 +16,6 @@ mongoose.set('strictQuery', false);
 db.once("open", () => {
     app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
 });
+
+// utilizing routes
+app.use(routes);

@@ -16,3 +16,16 @@ const createReaction = async (req, res) => {
         catchError(res, error);
     }
 };
+//Removing a feedback on an allied thought
+const deleteReactionById = async (req, res) => {
+    try {
+        const updatedThought = await Thought.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            { $pull: { reactions: { _id: req.params.reactionId } } },
+            { runValidators: true, new: true }
+        );
+        res.status(200).json(updatedThought);
+    } catch (error) {
+        catchError(res, error);
+    }
+};

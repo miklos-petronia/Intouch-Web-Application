@@ -16,7 +16,7 @@ const createReaction = async (req, res) => {
         catchError(res, error);
     }
 };
-//Removing a feedback on an allied thought
+//removing a feedback on an allied thought
 const deleteReactionById = async (req, res) => {
     try {
         const updatedThought = await Thought.findOneAndUpdate(
@@ -28,4 +28,9 @@ const deleteReactionById = async (req, res) => {
     } catch (error) {
         catchError(res, error);
     }
+};
+//export to be utilized at the routes
+module.exports = {
+    createReaction,
+    deleteReactionById,
 };

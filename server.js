@@ -8,3 +8,7 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// contain Mongoose reduction warning for `strictQuery`
+mongoose.set('strictQuery', false);
+

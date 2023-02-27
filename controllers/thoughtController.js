@@ -27,3 +27,12 @@ const findOneThought = async (req, res) => {
         catchError(res, error);
     }
 };
+//search all thoughts over the database
+const findAllThoughts = async (req, res) => {
+    try {
+        const thought = await Thought.find({});
+        res.status(200).json(thought);
+    } catch (error) {
+        catchError(res, error);
+    }
+};

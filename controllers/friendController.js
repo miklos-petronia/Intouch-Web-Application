@@ -22,3 +22,8 @@ const addFriend = async (req, res) => {
     const update = { $addToSet: { friends: req.params.friendId } };
     updateFriends(req, res, update);
 };
+//clear away a friend by identification
+const removeFriend = async (req, res) => {
+    const update = { $pull: { friends: req.params.friendId } };
+    updateFriends(req, res, update);
+};

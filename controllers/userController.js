@@ -23,3 +23,12 @@ const findOneUser = async (req, res) => {
         catchError(res, error);
     }
 };
+//search all users over the database
+const findAllUsers = async (req, res) => {
+    try {
+        const userDb = await User.find({});
+        res.status(200).json(userDb);
+    } catch (error) {
+        catchError(res, error);
+    }
+};

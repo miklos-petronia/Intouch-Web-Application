@@ -32,3 +32,20 @@ const findAllUsers = async (req, res) => {
         catchError(res, error);
     }
 };
+//remove a user by identification
+const deleteUserById = async (req, res) => {
+    try {
+        const userDb = await User.findByIdAndDelete({
+            _id: req.params.userId,
+        });
+        const deletedThoughts = await Thought.deleteMany({
+            _id: { $in: userDb.thoughts },
+        });
+        res.status(200).json({
+            userDb,
+            deletedThoughts,
+        });
+    } catch (error) {
+        catchError(res, error);
+    }
+};

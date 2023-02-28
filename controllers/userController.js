@@ -49,3 +49,24 @@ const deleteUserById = async (req, res) => {
         catchError(res, error);
     }
 };
+// updating a user by identification
+const updateUserById = async (req, res) => {
+    try {
+        const userDb = await User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $set: req.body },
+            { runValidators: true, new: true }
+        );
+        res.status(200).json(userDb);
+    } catch (error) {
+        catchError(res, error);
+    }
+};
+
+module.exports = {
+    createUser,
+    findOneUser,
+    findAllUsers,
+    deleteUserById,
+    updateUserById,
+};

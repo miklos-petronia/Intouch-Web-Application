@@ -11,3 +11,6 @@ const {
     createReaction,
     deleteReactionById,
 } = require('../../controllers/reactionController');
+
+// api/thoughts
+router.route('/').post(createThought).get(findAllThoughts);

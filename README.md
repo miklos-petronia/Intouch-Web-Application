@@ -58,7 +58,7 @@ Screenshot:
 Columbia classes videos, documentations & some videos online
 
 ## Questions & Report Bugs
-GitHub: [miklos-petronia](https://github.com/miklos-petronia)
-[email](mailto:miklos.petronia@hotmail.com)
+- GitHub: [miklos-petronia](https://github.com/miklos-petronia)
+- [email](mailto:miklos.petronia@hotmail.com)
 
 

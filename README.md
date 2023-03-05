@@ -48,6 +48,8 @@ In order to start the server run
 
 ## Usage
 Screenshot:
+![image](https://user-images.githubusercontent.com/113649566/222987178-18463aba-49c0-447a-bf11-6698cafde4c0.png)
+
 
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
